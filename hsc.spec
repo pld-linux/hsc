@@ -3,7 +3,7 @@ Summary(pl):	HTML Ssie Ca³kowicie
 Name:		hsc
 Version:	0.917
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Applications/Publishing
 Source0:	http://www.aminet.net/text/hyper/%{name}-source.lha
 Source1:	http://www.aminet.net/text/hyper/%{name}-ps.lha
@@ -47,7 +47,7 @@ rm -rf $RPM_BUILD_ROOT $RPM_BUILD_DIR/file_id.diz $RPM_BUILD_DIR/hsc
 
 %files
 %defattr(644,root,root,755)
-%doc hsc/CHANGES hsc/COPYING hsc/IMPORTANT hsc/NEWS hsc/README hsc/docs
+%doc hsc/CHANGES hsc/IMPORTANT hsc/NEWS hsc/README hsc/docs
 %doc hsc/docs-source hsc/examples hsc/grafflwerk hsc/hsc-html-40.prefs
 %doc hsc/hsc.prefs hsc/hsc.ps hsc/readme hsc/starter-project
 %attr(755,root,root) %{_bindir}/hsc
