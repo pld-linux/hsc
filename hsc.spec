@@ -1,4 +1,5 @@
 Summary:	HTML Sucks Completely
+Summary(pl):	HTML Ssie Ca³kowicie
 Name:		hsc
 Version:	0.917
 Release:	1
@@ -17,8 +18,10 @@ URL:		http://www.giga.or.at/~agi/hsc/
 %description
 HSC is HTML preprocessor with syntax checking.
 
-%prep
+%description -l pl
+HSC to preprocesor HTML z kontrol± sk³adni.
 
+%prep
 cd %{_builddir}
 rm -rf hsc
 lha -xq2f %{SOURCE0}
@@ -28,12 +31,10 @@ cp %{SOURCE2} .
 %patch0 -p1
 
 %build
-
 cd hsc/source
-%{__make} all CC=gcc CFLAGS="$RPM_OPT_FLAGS" SYS=-DUNIX
+%{__make} all CC=%{__cc} CFLAGS="%{rpmcflags}" SYS=-DUNIX
 
 %install
-
 rm -rf $RPM_BUILD_ROOT
 
 cd hsc/source
