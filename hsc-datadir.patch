@@ -6,7 +6,7 @@ diff -uNr hsc/source/Makefile hsc-datadir/source/Makefile
  	$(INSTALL) -m 755 hsctools/hscdepp $(INSTDIR)/bin/hscdepp
  	$(INSTALL) -m 755 hsctools/hscpitt $(INSTDIR)/bin/hscpitt
 -	$(INSTALL) -m 644 ../hsc.prefs $(INSTDIR)/lib/hsc.prefs
-+	$(INSTALL) -m 644 ../hsc-html-40.prefs $(INSTDIR)/share/hsc.prefs
++	$(INSTALL) -m 644 ../hsc-html-40.prefs $(INSTDIR)/share/misc/hsc.prefs
  
  
  #--------------------------------------------------------------------
@@ -18,7 +18,7 @@ diff -uNr hsc/source/hsclib/hscprc.h hsc-datadir/source/hsclib/hscprc.h
  #elif (defined NEXTSTEP) || (defined UNIX) || (defined BEOS)
  #define CONFIG_FILE "hsc.prefs"
 -#define CONFIG_PATH "/usr/local/lib/", "/usr/lib/"
-+#define CONFIG_PATH "/usr/local/share/", "/usr/share/"
++#define CONFIG_PATH "/usr/local/share/misc/", "/usr/share/misc/"
  #define OPTION_FILE "hsc.options"
  
  /* [3] */
