@@ -21,7 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 HSC is HTML preprocessor with syntax checking.
 
 %description -l pl
-HSC to preprocesor HTML z kontrol± sk³adni.
+HSC to preprocesor HTML-a z kontrol± sk³adni.
 
 %prep
 %setup -qcT
