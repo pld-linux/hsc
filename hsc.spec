@@ -1,7 +1,7 @@
 Summary:	HTML Sucks Completely
 Name:		hsc
 Version:	0.917
-Release:	0.2
+Release:	1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	http://www.aminet.net/text/hyper/%{name}-source.lha
@@ -11,6 +11,8 @@ Patch0:		hsc-datadir.patch
 BuildRequires:	lha
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 URL:		http://www.giga.or.at/~agi/hsc/
+
+%define         _noautocompressdoc	*.hsc *.prefs
 
 %description
 HSC is HTML preprocessor with syntax checking.
