@@ -1,11 +1,12 @@
 Summary:	HTML Sucks Completely
 Name:		hsc
-Version:	0.916
+Version:	0.917
 Release:	0.1
 License:	GPL
 Group:		Applications/Publishing
 Source0:	http://www.aminet.net/text/hyper/%{name}-source.lha
 Source1:	http://www.aminet.net/text/hyper/%{name}-ps.lha
+BuildRequires:	lha
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 URL:		http://www.giga.or.at/~agi/hsc/
 
@@ -14,15 +15,16 @@ HSC is HTML preprocessor with syntax checking.
 
 %prep
 
+cd %{_builddir}
 rm -rf hsc
-lha -xf $RPM_SOURCE_DIR/hsc-source.lha
+lha -xf %{SOURCE0}
 cd hsc
-lha -xf $RPM_SOURCE_DIR/hsc-ps.lha
+lha -xf %{SOURCE1}
 
 %build
 
 cd hsc/source
-%{__make} all CC=gcc CFLAGS='-s -O2' SYS=-DUNIX
+%{__make} all CC=gcc CFLAGS="$RPM_OPT_FLAGS" SYS=-DUNIX
 
 %install
 
