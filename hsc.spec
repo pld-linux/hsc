@@ -32,18 +32,16 @@ cp %{SOURCE2} .
 %patch0 -p1
 
 %build
-cd hsc/source
-%{__make} all \
+%{__make} all -C hsc/source \
 	CC=%{__cc} \
 	CFLAGS="%{rpmcflags}" \
 	SYS=-DUNIX
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_datadir}/misc}
 
-cd hsc/source
-%{__make} install \
+%{__make} install -C hsc/source \
 	INSTALL=install \
 	INSTDIR=$RPM_BUILD_ROOT%{_prefix}
 
@@ -57,4 +55,4 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/hsc
 %attr(755,root,root) %{_bindir}/hscdepp
 %attr(755,root,root) %{_bindir}/hscpitt
-%{_datadir}/hsc.prefs
+%{_datadir}/misc/hsc.prefs
