@@ -1,11 +1,13 @@
 Summary:	HTML Sucks Completely
 Name:		hsc
 Version:	0.917
-Release:	0.1
+Release:	0.2
 License:	GPL
 Group:		Applications/Publishing
 Source0:	http://www.aminet.net/text/hyper/%{name}-source.lha
 Source1:	http://www.aminet.net/text/hyper/%{name}-ps.lha
+Source2:	hsc-html-40.prefs
+Patch0:		hsc-datadir.patch
 BuildRequires:	lha
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 URL:		http://www.giga.or.at/~agi/hsc/
@@ -17,9 +19,11 @@ HSC is HTML preprocessor with syntax checking.
 
 cd %{_builddir}
 rm -rf hsc
-lha -xf %{SOURCE0}
+lha -xq2f %{SOURCE0}
 cd hsc
-lha -xf %{SOURCE1}
+lha -xq2f %{SOURCE1}
+cp %{SOURCE2} .
+%patch0 -p1
 
 %build
 
@@ -31,7 +35,7 @@ cd hsc/source
 rm -rf $RPM_BUILD_ROOT
 
 cd hsc/source
-install -d -m 755 $RPM_BUILD_ROOT%{_libdir}
+install -d -m 755 $RPM_BUILD_ROOT%{_datadir}
 install -d -m 755 $RPM_BUILD_ROOT%{_bindir}
 %{__make} install INSTALL=install INSTDIR=$RPM_BUILD_ROOT%{_prefix}/
 
@@ -46,4 +50,4 @@ rm -rf $RPM_BUILD_ROOT $RPM_BUILD_DIR/file_id.diz $RPM_BUILD_DIR/hsc
 %attr(755,root,root) %{_bindir}/hsc
 %attr(755,root,root) %{_bindir}/hscdepp
 %attr(755,root,root) %{_bindir}/hscpitt
-%{_libdir}/hsc.prefs
+%attr(644,root,root) %{_datadir}/hsc.prefs
