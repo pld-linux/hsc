@@ -6,7 +6,9 @@ Release:	1
 License:	GPL v2+
 Group:		Applications/Publishing
 Source0:	http://www.aminet.net/text/hyper/%{name}-source.lha
+# Source0-md5:	c7efe30e58ff02b7da08d1e26561b7b3
 Source1:	http://www.aminet.net/text/hyper/%{name}-ps.lha
+# Source1-md5:	4b74015060a3dafe1e0dde132ab5ae0f
 Source2:	hsc-html-40.prefs
 Patch0:		hsc-datadir.patch
 BuildRequires:	lha
