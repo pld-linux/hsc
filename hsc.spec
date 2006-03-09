@@ -33,7 +33,7 @@ cp %{SOURCE2} .
 
 %build
 %{__make} all -C hsc/source \
-	CC=%{__cc} \
+	CC="%{__cc}" \
 	CFLAGS="%{rpmcflags}" \
 	SYS=-DUNIX
 
