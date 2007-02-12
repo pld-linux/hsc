@@ -1,5 +1,5 @@
 Summary:	HTML Sucks Completely
-Summary(pl):	HTML Ssie Ca≥kowicie
+Summary(pl.UTF-8):   HTML Ssie Ca≈Çkowicie
 Name:		hsc
 Version:	0.917
 Release:	1
@@ -20,8 +20,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 HSC is HTML preprocessor with syntax checking.
 
-%description -l pl
-HSC to preprocesor HTML-a z kontrol± sk≥adni.
+%description -l pl.UTF-8
+HSC to preprocesor HTML-a z kontrolƒÖ sk≈Çadni.
 
 %prep
 %setup -qcT
