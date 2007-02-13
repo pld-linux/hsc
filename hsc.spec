@@ -1,5 +1,5 @@
 Summary:	HTML Sucks Completely
-Summary(pl.UTF-8):   HTML Ssie Całkowicie
+Summary(pl.UTF-8):	HTML Ssie Całkowicie
 Name:		hsc
 Version:	0.917
 Release:	1
